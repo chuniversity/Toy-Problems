@@ -1,2 +1,2 @@
-# Toy-Problems-
+# Toy-Problems
 Various Javascript Problems
