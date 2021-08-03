@@ -29,13 +29,22 @@ return indexes;
 }
 
 const twoSum2 = (array, target) => {
-  
+  //make hash table for storage using linear time complexity
+  let obj = {}
   for (let i = 0; i < array.length; i++) {
-    if(array[i] - array[i+1] === target)
-
-
+    obj[array[i]] = i;
   }
-
+  // iterate over array again using linear time complexity
+  for (let i = 0; i < array.length; i++) {
+    let goal = target - array[i];
+    if(obj[goal]) {
+      let indexes = [];
+      indexes.push(i);
+      indexes.push(obj[goal]);
+      return indexes;
+    }
+  }
+  return null;
 }
 
 
@@ -44,5 +53,5 @@ const twoSum2 = (array, target) => {
 let nums = [2,7,11,15]
 let target = 9
 
-console.log(twoSum(nums, target));
-console.log(twoSum([3,2,4], 6));
+// console.log(twoSum2(nums, target));
+// console.log(twoSum2([3,2,4], 6));
