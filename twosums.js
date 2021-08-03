@@ -35,16 +35,18 @@ const twoSum2 = (array, target) => {
     obj[array[i]] = i;
   }
   // iterate over array again using linear time complexity
+  let indexes = [];
   for (let i = 0; i < array.length; i++) {
     let goal = target - array[i];
-    if(obj[goal]) {
+    if(obj[goal] && obj[goal] !== i) {
+      console.log(array[i], obj[goal])
       let indexes = [];
       indexes.push(i);
       indexes.push(obj[goal]);
       return indexes;
     }
   }
-  return null;
+  return indexes;
 }
 
 
@@ -55,3 +57,4 @@ let target = 9
 
 // console.log(twoSum2(nums, target));
 // console.log(twoSum2([3,2,4], 6));
+console.log(twoSum2([1,3,4,2], 6)); // expect [2,3]
