@@ -21,5 +21,6 @@ function diagonalDifference(arr) {
 
 let matrix1 = [[1,2,3], [4,5,6], [9,8,9]];
 
+
 console.log(diagonalDifference(matrix1)) // expect 2 (15 - 17)
 
